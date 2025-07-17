@@ -1,16 +1,11 @@
-import { connectToDB } from "@/lib/mongodb";
+import { NextResponse } from "next/server";
 import Blog from "@/models/Blog";
-
-export async function GET() {
-  await connectToDB();
-  const blogs = await Blog.find().sort({ createdAt: -1 });
-  return Response.json(blogs);
-}
+import connectDB from "@/utils/db";
 
 export async function POST(req) {
-  await connectToDB();
-  const { title, content, image } = await req.json();
-  const newBlog = new Blog({ title, content, image });
-  await newBlog.save();
-  return Response.json({ status: "success" });
+  const body = await req.json();
+  await connectDB();
+  const newBlog = new Blog(body);
+  const saved = await newBlog.save();
+  return NextResponse.json(saved);
 }
