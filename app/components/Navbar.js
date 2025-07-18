@@ -1,4 +1,4 @@
-// /components/Navbar.jsx
+
 import Link from "next/link";
 
 export default function Navbar() {
@@ -6,7 +6,8 @@ export default function Navbar() {
     <nav style={{ backgroundColor: "#f4f4f4", padding: "10px" }}>
       <Link href="/home" style={{ marginRight: "10px" }}>Home</Link>
       <Link href="/create" style={{ marginRight: "10px" }}>Create</Link>
-      <Link href="/blogs">Blogs</Link>
+      <Link href="/blogs">View All Blogs</Link>
     </nav>
   );
 }
+import Link from "next/link";
