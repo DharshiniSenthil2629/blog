@@ -1,13 +1,15 @@
 
+"use client";
 import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <nav style={{ backgroundColor: "#f4f4f4", padding: "10px" }}>
-      <Link href="/home" style={{ marginRight: "10px" }}>Home</Link>
-      <Link href="/create" style={{ marginRight: "10px" }}>Create</Link>
-      <Link href="/blogs">View All Blogs</Link>
+    <nav style={{ padding: "1rem", background: "#f0f0f0" }}>
+      <ul style={{ display: "flex", gap: "1rem", listStyle: "none" }}>
+        <li><Link href="/">Home</Link></li>
+        <li><Link href="/blogs">Blogs</Link></li>
+        <li><Link href="/create">Create Blog</Link></li>
+      </ul>
     </nav>
   );
 }
-import Link from "next/link";
